@@ -21,14 +21,14 @@ func Fibonacci(n uint) uint64 {
 
 // FibonacciBig calculates Fibonacci number using bit.Int.
 // For the sequence numbers below 94, it is recommended to use Fibonacci function as it is more efficient.
-func FibonacciBig(n uint) *big.Int {
-	if n <= 1 {
+func FibonacciBig(nn uint) *big.Int {
+	if nn <= 1 {
 		return big.NewInt(int64(n))
 	}
 
 	var n2, n1 = big.NewInt(0), big.NewInt(1)
 
-	for i := uint(1); i < n; i++ {
+	for i := uint(1); i < nn; i++ {
 		n2.Add(n2, n1)
 		n1, n2 = n2, n1
 	}
